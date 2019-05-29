@@ -42,6 +42,7 @@ $(".gems").on("click", function() {
     // get the value from the gem
     var gemTotal = parseInt($(this).val());
     // add it to the score
+    // longhand is score = score + gemTotal
     score += gemTotal;
     // update the UI to reflect the score
     $("#score-num").text(score);
@@ -50,15 +51,14 @@ $(".gems").on("click", function() {
     // the target number
     if(score === targetNum) {
         // alert we win
-        $("#result-text").text("🏆 You won! 🏆")
+        $("#result-text").text("🏆 You won! 🏆");
         // if the score in larger then the target number
         resetGame();
 
     } else if(score > targetNum) {
         // alert we lose
-        $("#result-text").text("😭 You lose! 😭")
+        $("#result-text").text("😭 You lose! 😭");
         // reset the game
         resetGame();
     }
-
 });
